@@ -79,7 +79,7 @@ The following measured MAEs are in **bikes rented per hour** (lower is better):
 |---|---:|---:|
 | Training-set mean baseline | 9.952 | 9.848 |
 | Linear regression baseline | 9.032 | 8.763 |
-| **Validation-selected neural network (wide-network)** | **2.445** | **2.423** |
+| **Validation-selected neural network (wide-network)** | **2.455** | **2.423** |
 
 The neural network is better than both baselines on the held-out test data.
 The mean predictor ignores the inputs. The linear regression is more useful
