@@ -4,7 +4,7 @@
 
 This project predicts the number of bikes rented from a Lakeshore Bike Share station
 in an upcoming hour, using simulated station-hour data supplied in Lab 07. It
-implements a PyTorch training loop **by hand**, compares a neural network with a
+implements a training loop **by hand**, compares a neural network with a
 training-mean predictor and ordinary linear regression, and records learning curves
 and controlled experiments. It is a learning exercise, not a production demand forecast.
 
@@ -79,7 +79,7 @@ The following measured MAEs are in **bikes rented per hour** (lower is better):
 |---|---:|---:|
 | Training-set mean baseline | 9.952 | 9.848 |
 | Linear regression baseline | 9.032 | 8.763 |
-| **Validation-selected neural network (wide-network)** | **2.449** | **2.414** |
+| **Validation-selected neural network (wide-network)** | **2.445** | **2.423** |
 
 The neural network is better than both baselines on the held-out test data.
 The mean predictor ignores the inputs. The linear regression is more useful
@@ -100,9 +100,9 @@ validation fit. The dashed line marks the best checkpoint, not the last epoch.
 
 | Run (single changed setting) | Best epoch | Best validation MAE | Final training MSE | Final validation MSE |
 |---|---:|---:|---:|---:|
-| Main: width 64, lr 0.003 | 96 | 2.739 | 13.713 | 16.844 |
+| Main: width 64, lr 0.003 | 96 | 2.74 | 13.713 | 16.844 |
 | Low learning rate: lr 0.00003 | 100 | 9.061 | 185.189 | 186.230 |
-| Wide network: width 256 | 36 | 2.449 | 8.610 | 14.675 |
+| Wide network: width 256 | 36 | 2.455 | 8.610 | 14.675 |
 
 - **Main:** Healthy learning with modest generalization gap. The best
   validation loss precedes the end, showing small late fluctuations or early
