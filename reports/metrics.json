@@ -1,0 +1,25 @@
+{
+  "seed": 2026,
+  "rows": 6000,
+  "split": {
+    "train": 3600,
+    "validation": 1200,
+    "test": 1200
+  },
+  "selected_run": "wide_network",
+  "selection_rule": "lowest best validation MSE; test used once after selection",
+  "models": {
+    "training_mean": {
+      "validation_mae_rentals": 9.951945304870605,
+      "test_mae_rentals": 9.848395347595215
+    },
+    "linear_regression": {
+      "validation_mae_rentals": 9.032176971435547,
+      "test_mae_rentals": 8.762953758239746
+    },
+    "selected_network": {
+      "validation_mae_rentals": 2.449176549911499,
+      "test_mae_rentals": 2.413684129714966
+    }
+  }
+}
