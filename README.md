@@ -137,19 +137,6 @@ Data tables and full epoch logs are in `reports/experiments.csv`,
 - Experiments illustrate learning behavior, not an exhaustive tuning search.
   More tests on independent real-world data would be necessary before use.
 
-## Verification and submission
 
-This package was tested here with `python -m pytest` (**14 passed**) and
-`python train.py` (generated the committed report artifacts). The required
-Ruff commands could **not** be executed in this environment because Ruff was
-not installed and internet package installation was unavailable. Run both
-Ruff checks in the provided Conda environment before submitting; fix any
-formatting/lint findings and rerun training/tests if code changes.
 
-Submit the **GitHub repository URL**, not this ZIP, through Blackboard. The
-repository must be named `lab07-first-principles`, contain at least **five
-meaningful commits**, and have its **first commit add only `bikes_data.py`**.
-Commit `reports/` files. If private, give the instructor the access specified
-in the assignment rather than making the repository inaccessible.
-
-Refer to `SETUP_AND_SUBMISSION.md` for exact Git/Conda/VS Code steps.
+### Refer to `SETUP_AND_SUBMISSION.md` for exact Git/Conda/VS Code steps.
