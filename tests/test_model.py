@@ -29,9 +29,7 @@ def test_optimizer_step_updates_every_linear_layer():
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    after = [
-        layer.weight for layer in model.modules() if isinstance(layer, nn.Linear)
-    ]
+    after = [layer.weight for layer in model.modules() if isinstance(layer, nn.Linear)]
     assert all(not torch.equal(x, y) for x, y in zip(before, after, strict=True))
 
 

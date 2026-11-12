@@ -178,8 +178,11 @@ def main() -> None:
         curve_name = "learning_curves.png" if name == "main" else f"curves_{name}.png"
         plot_curves(history, record["best_epoch"], REPORTS / curve_name)
         print(
-            name, "best epoch", record["best_epoch"],
-            "val MAE", round(record["best_val_mae"], 3),
+            name,
+            "best epoch",
+            record["best_epoch"],
+            "val MAE",
+            round(record["best_val_mae"], 3),
         )
     pd.DataFrame(records).to_csv(REPORTS / "experiments.csv", index=False)
 
@@ -213,9 +216,7 @@ def main() -> None:
                 "validation_mae_rentals": float(
                     mean_absolute_error(data.y_valid, pred_valid)
                 ),
-                "test_mae_rentals": float(
-                    mean_absolute_error(data.y_test, pred_test)
-                ),
+                "test_mae_rentals": float(mean_absolute_error(data.y_test, pred_test)),
             }
             for name, (pred_valid, pred_test) in predictions.items()
         },

@@ -34,8 +34,7 @@ def test_validation_epoch_does_not_change_weights(prepared):
     loss, mae = run_epoch(model, valid, nn.MSELoss())
     assert loss >= 0 and mae >= 0
     assert all(
-        torch.equal(value, model.state_dict()[key])
-        for key, value in before.items()
+        torch.equal(value, model.state_dict()[key]) for key, value in before.items()
     )
 
 
@@ -47,7 +46,11 @@ def test_fit_history_and_best_weights_are_restored(prepared):
         model, train, valid, epochs=5, learning_rate=0.002
     )
     assert list(history.columns) == [
-        "epoch", "train_loss", "train_mae", "val_loss", "val_mae"
+        "epoch",
+        "train_loss",
+        "train_mae",
+        "val_loss",
+        "val_mae",
     ]
     assert len(history) == 5
     assert best_epoch == int(history.loc[history.val_loss.idxmin(), "epoch"])
